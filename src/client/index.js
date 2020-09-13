@@ -110,7 +110,7 @@ const getSession = async ({ req, ctx, triggerEvent = true } = {}) => {
   // work seemlessly in getInitialProps() on server side pages *and* in _app.js.
   if (!req && ctx && ctx.req) { req = ctx.req }
 
-  const baseUrl = _apiBaseUrl()
+  const baseUrl = "https://pettonature.vercel.app/api/auth"
   const fetchOptions = req ? { headers: { cookie: req.headers.cookie } } : {}
   const session = await _fetchData(`${baseUrl}/session`, fetchOptions)
   if (triggerEvent) {
